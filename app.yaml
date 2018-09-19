@@ -9,12 +9,12 @@ spec:
   - name: shuffle-lunch
     image: practice/shuffle-lunch:latest
     imagePullPolicy: IfNotPresent
-    workingDir: /app
+    workingDir: /mountpoint
     command:
       - './entrypoint.sh'
     volumeMounts:
-    - name: app
-      mountPath: /app
+    - name: mountpoint
+      mountPath: /mountpoint
     ports:
     - containerPort: 3000
     env:
@@ -29,9 +29,9 @@ spec:
     - name: BUNDLE_JOBS
       value: '4'
   volumes:
-  - name: app
+  - name: mountpoint
     hostPath:
-      path: /Users/first/Documents/Projects/orchestration-practice/shuffle-lunch/app
+      path: /Users/first/Documents/Projects/orchestration-practice/shuffle-lunch/mountpoint
       type: Directory
 ---
 apiVersion: v1
