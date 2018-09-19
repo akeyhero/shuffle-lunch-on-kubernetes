@@ -1,0 +1,3 @@
+[submodule "mountpoint/repo"]
+	path = mountpoint/repo
+	url = git@github.com:akeyhero/shuffle_lunch.git
